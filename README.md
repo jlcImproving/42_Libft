@@ -2,7 +2,7 @@ libft - #42cursus
 
 ### Info
 
-Personal useful C functions
+Useful C functions
 
 ### How to install and use
 
