@@ -57,7 +57,7 @@ gcc -c (.c file) -o (.o output file) -I ./libft/inc
 gcc (...)(.o files) -o (output file) -I ./libft/inc -L ./libft -lft
 ```
 
-- ✨ Magic ✨
+- It's done!
 
 ## ft_printf flags
 
