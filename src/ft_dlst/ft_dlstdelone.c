@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_distdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joaocharneca <joaocharneca@student.42.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/10 19:31:43 by tferreir         ###   ########.fr       */
+/*   Created: 2022/06/19 22:37:07 by joaocharneca      #+#    #+#             */
+/*   Updated: 2022/06/19 22:37:17 by joaocharneca     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft/ft_dlst.h>
 
-size_t	ft_strlen(const char *s)
+void	ft_dlstdelone(t_dlist *dlst, void (*del)(void *))
 {
-	size_t	index;
-
-	index = 0;
-	while (s[index] != '\0')
-	{
-		index++;
-	}
-	return (index);
+	if (!dlst || !del)
+		return ;
+	del(dlst->data);
+	free(dlst);
 }

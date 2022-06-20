@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joaocharneca <joaocharneca@student.42.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 18:33:33 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/09 19:49:33 by tferreir         ###   ########.fr       */
+/*   Created: 2022/06/19 23:18:08 by joaocharneca      #+#    #+#             */
+/*   Updated: 2022/06/19 23:18:15 by joaocharneca     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	char	*save;
+
+	save = dst;
+	while (*src)
+		*dst++ = *src++;
+	*dst = '\0';
+	return (save);
 }

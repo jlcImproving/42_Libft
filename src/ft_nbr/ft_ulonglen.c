@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_ulonglen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joaocharneca <joaocharneca@student.42.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 19:24:31 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/09 19:49:30 by tferreir         ###   ########.fr       */
+/*   Created: 2022/06/19 23:10:17 by joaocharneca      #+#    #+#             */
+/*   Updated: 2022/06/19 23:10:24 by joaocharneca     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-
-int	ft_alnum(int c)
+int	ft_ulonglen(unsigned long n)
 {
-	if (ft_isalpha(c) == 0 || ft_isdigit(c) == 0)
-		return (0);
-	return (1);
+	int	cnt;
+
+	cnt = 1;
+	while (n > 9)
+	{
+		n /= 10;
+		cnt++;
+	}
+	return (cnt);
 }

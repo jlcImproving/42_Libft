@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joaocharneca <joaocharneca@student.42.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 19:53:20 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/09 19:58:49 by tferreir         ###   ########.fr       */
+/*   Created: 2022/06/19 22:51:48 by joaocharneca      #+#    #+#             */
+/*   Updated: 2022/06/19 22:51:50 by joaocharneca     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <libft/ft_fd.h>
+
+int	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	int	cnt;
+
+	if (!s)
+		return (0);
+	cnt = 0;
+	cnt += ft_putstr_fd(s, fd);
+	cnt += ft_putchar_fd('\n', fd);
+	return (cnt);
 }
